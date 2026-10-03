@@ -10,14 +10,18 @@ TOKEN = os.environ["MOODLE_TOKEN"]
 USER_ID = int(os.environ["MOODLE_USER_ID"])
 API_URL = f"{BASE_URL}/webservice/rest/server.php"
 
-COURSES = {
-    85966: "ie201_programming",
-    85764: "ie341_economics",
-    84679: "ie423_quality",
-    83575: "ie440_nonlinear",
-    84273: "ie450_stochastic",
-    85927: "htr311_tarih",
-}
+def _parse_courses():
+    raw = os.environ.get("COURSES", "")
+    courses = {}
+    for entry in raw.split(","):
+        entry = entry.strip()
+        if not entry:
+            continue
+        cid, folder = entry.split(":", 1)
+        courses[int(cid)] = folder.strip()
+    return courses
+
+COURSES = _parse_courses()
 
 
 def _call(function, **params):
