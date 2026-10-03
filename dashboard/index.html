@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boun Dashboard</title>
+<style>
+:root {
+  --bg: #0f1117;
+  --card: #1a1d27;
+  --border: #2a2d3a;
+  --text: #e4e4e7;
+  --muted: #71717a;
+  --accent: #6366f1;
+  --hard: #ef4444;
+  --medium: #f59e0b;
+  --easy: #22c55e;
+  --synced: #22c55e;
+  --unsynced: #ef4444;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #f8f9fa;
+    --card: #ffffff;
+    --border: #e5e7eb;
+    --text: #1f2937;
+    --muted: #6b7280;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f1117;
+  --card: #1a1d27;
+  --border: #2a2d3a;
+  --text: #e4e4e7;
+  --muted: #71717a;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; padding: 16px; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.5rem; margin-bottom: 4px; }
+.updated { color: var(--muted); font-size: 0.85rem; margin-bottom: 24px; }
+h2 { font-size: 1.1rem; margin-bottom: 12px; color: var(--muted); }
+.messages { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 16px; margin-bottom: 24px; max-height: 300px; overflow-y: auto; }
+.msg { padding: 8px 0; border-bottom: 1px solid var(--border); }
+.msg:last-child { border-bottom: none; }
+.msg .ts { color: var(--muted); font-size: 0.8rem; }
+.msg .detail { color: var(--muted); font-size: 0.85rem; }
+.courses { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+.course { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
+.course.hard { border-left: 3px solid var(--hard); }
+.course.medium { border-left: 3px solid var(--medium); }
+.course.easy { border-left: 3px solid var(--easy); }
+.course-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.course-header h3 { font-size: 0.95rem; }
+.badge { font-size: 0.7rem; padding: 2px 8px; border-radius: 99px; font-weight: 600; }
+.badge.hard { background: var(--hard); color: white; }
+.badge.medium { background: var(--medium); color: black; }
+.badge.easy { background: var(--easy); color: black; }
+.stats { display: flex; gap: 16px; margin-bottom: 8px; }
+.stat { text-align: center; }
+.stat .num { display: block; font-size: 1.2rem; font-weight: 700; }
+.stat .lbl { font-size: 0.75rem; color: var(--muted); }
+.sync { font-size: 0.8rem; padding: 4px 8px; border-radius: 6px; text-align: center; }
+.sync.synced { background: rgba(34,197,94,0.1); color: var(--synced); }
+.sync.unsynced { background: rgba(239,68,68,0.1); color: var(--unsynced); }
+</style>
+</head>
+<body>
+<h1>Boun Dashboard</h1>
+<div class="updated">Son guncelleme: 03/10/2026 18:08</div>
+
+<h2>Okunmamis Mesajlar</h2>
+<div class="messages"><div class="msg"><span class="ts">02/10 12:55</span> <strong>2026/2027-1 IE 423.01: Today's (October 2nd, 2026) lecture is cancelled</strong><br><span class="detail">Mustafa Baydoğan posted in 2026/2027-1 IE  423.01: Announcements: Today's (October 2nd, 2026) lecture is cancelled</span></div>
+<div class="msg"><span class="ts">01/10 21:56</span> <strong>2026/2027-1 IE 423.01: Project Groups</strong><br><span class="detail">Abdullah Kayacan posted in 2026/2027-1 IE  423.01: Announcements: Project Groups</span></div>
+<div class="msg"><span class="ts">29/09 06:11</span> <strong>2026/2027-1 IE 201.01: No class today</strong><br><span class="detail">KEREM DEMİRTAŞ posted in 2026/2027-1 IE  201.01: Announcements: No class today</span></div>
+<div class="msg"><span class="ts">28/09 12:42</span> <strong>2026/2027-1 IE 450.01: Midterm Dates and Exam Rooms</strong><br><span class="detail">EBRAR BAŞTAN posted in 2026/2027-1 IE  450.01: Announcements: Midterm Dates and Exam Rooms</span></div>
+<div class="msg"><span class="ts">28/09 11:54</span> <strong>2026/2027-1 IE 423.01: Github User Form</strong><br><span class="detail">Abdullah Kayacan posted in 2026/2027-1 IE  423.01: Announcements: Github User Form</span></div>
+<div class="msg"><span class="ts">25/09 15:44</span> <strong>2026/2027-1 IE 450.01: Review Materials</strong><br><span class="detail">EBRAR BAŞTAN posted in 2026/2027-1 IE  450.01: Announcements: Review Materials</span></div>
+<div class="msg"><span class="ts">25/09 15:11</span> <strong>2026/2027-1 IE 440.01: Re: IE 440 – Quiz and Midterm Dates</strong><br><span class="detail">BERAT KUBİLAY GÜNGEZ posted in 2026/2027-1 IE  440.01: Announcements: IE 440 – Quiz and Midterm Dates</span></div>
+<div class="msg"><span class="ts">25/09 10:24</span> <strong>2026/2027-1 IE 450.01: Re: Midterm I - Possible Dates</strong><br><span class="detail">EBRAR BAŞTAN posted in 2026/2027-1 IE  450.01: Announcements: Midterm I - Possible Dates</span></div>
+<div class="msg"><span class="ts">24/09 21:26</span> <strong>2026/2027-1 IE 201.01: Change in grading, no in-class quizzes</strong><br><span class="detail">KEREM DEMİRTAŞ posted in 2026/2027-1 IE  201.01: Announcements: Change in grading, no in-class quizzes</span></div>
+<div class="msg"><span class="ts">24/09 16:36</span> <strong>2026/2027-1 IE 450.01: Midterm I - Possible Dates</strong><br><span class="detail">EBRAR BAŞTAN posted in 2026/2027-1 IE  450.01: Announcements: Midterm I - Possible Dates</span></div>
+<div class="msg"><span class="ts">22/09 10:42</span> <strong>2026/2027-1 IE 201.01: Re: Classroom Update</strong><br><span class="detail">KEREM DEMİRTAŞ posted in 2026/2027-1 IE  201.01: Announcements: Classroom Update</span></div>
+<div class="msg"><span class="ts">22/09 09:36</span> <strong>2026/2027-1 IE 201.01: Classroom Update</strong><br><span class="detail">KEREM DEMİRTAŞ posted in 2026/2027-1 IE  201.01: Announcements: Classroom Update</span></div>
+</div>
+
+<h2>Dersler</h2>
+<div class="courses"><div class="course hard">
+  <div class="course-header">
+    <h3>IE 440 — Nonlinear OR</h3>
+    <span class="badge hard">ZOR</span>
+  </div>
+  <div class="stats">
+    <div class="stat"><span class="num">3</span><span class="lbl">Materyal</span></div>
+    <div class="stat"><span class="num">0</span><span class="lbl">Not</span></div>
+    <div class="stat"><span class="num">0</span><span class="lbl">Cikmis</span></div>
+  </div>
+  <div class="sync synced">Guncel</div>
+</div>
+<div class="course hard">
+  <div class="course-header">
+    <h3>IE 450 — Stochastic OR</h3>
+    <span class="badge hard">ZOR</span>
+  </div>
+  <div class="stats">
+    <div class="stat"><span class="num">10</span><span class="lbl">Materyal</span></div>
+    <div class="stat"><span class="num">0</span><span class="lbl">Not</span></div>
+    <div class="stat"><span class="num">0</span><span class="lbl">Cikmis</span></div>
+  </div>
+  <div class="sync synced">Guncel</div>
+</div>
+<div class="course hard">
+  <div class="course-header">
+    <h3>IE 201 — Programming</h3>
+    <span class="badge hard">ZOR</span>
+  </div>
+  <div class="stats">
+    <div class="stat"><span class="num">16</span><span class="lbl">Materyal</span></div>
+    <div class="stat"><span class="num">0</span><span class="lbl">Not</span></div>
+    <div class="stat"><span class="num">0</span><span class="lbl">Cikmis</span></div>
+  </div>
+  <div class="sync synced">Guncel</div>
+</div>
+<div class="course medium">
+  <div class="course-header">
+    <h3>IE 423 — Quality Eng.</h3>
+    <span class="badge medium">ORTA</span>
+  </div>
+  <div class="stats">
+    <div class="stat"><span class="num">14</span><span class="lbl">Materyal</span></div>
+    <div class="stat"><span class="num">0</span><span class="lbl">Not</span></div>
+    <div class="stat"><span class="num">0</span><span class="lbl">Cikmis</span></div>
+  </div>
+  <div class="sync synced">Guncel</div>
+</div>
+<div class="course easy">
+  <div class="course-header">
+    <h3>IE 341 — Eng. Economics</h3>
+    <span class="badge easy">KOLAY</span>
+  </div>
+  <div class="stats">
+    <div class="stat"><span class="num">6</span><span class="lbl">Materyal</span></div>
+    <div class="stat"><span class="num">0</span><span class="lbl">Not</span></div>
+    <div class="stat"><span class="num">0</span><span class="lbl">Cikmis</span></div>
+  </div>
+  <div class="sync synced">Guncel</div>
+</div>
+<div class="course easy">
+  <div class="course-header">
+    <h3>HTR 311 — Tarih</h3>
+    <span class="badge easy">KOLAY</span>
+  </div>
+  <div class="stats">
+    <div class="stat"><span class="num">36</span><span class="lbl">Materyal</span></div>
+    <div class="stat"><span class="num">0</span><span class="lbl">Not</span></div>
+    <div class="stat"><span class="num">0</span><span class="lbl">Cikmis</span></div>
+  </div>
+  <div class="sync synced">Guncel</div>
+</div>
+</div>
+</body>
+</html>
