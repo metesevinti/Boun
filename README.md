@@ -152,3 +152,7 @@ Boun/
 - `.env` dosyasi **asla commit edilmez** — icinde Moodle token'in var
 - `courses/*/materials/` gitignore'da — herkes kendi sync'ler
 - `courses/*/notes/` ve `courses/*/exams/` paylasilabilir — cikmis sorulari ve notlari buraya koy
+
+## Ek icerik (ders notlari ve calisma materyali)
+
+- **IE 440** — Mehmet'in ders notlari ve Quiz 1 calisma dosyalari: [`courses/ie440_nonlinear/notes/`](courses/ie440_nonlinear/notes/README.md) (ozet notlar, 2013 Quiz 1 cozumu, cozumlu pratik sorular, konulara ayrilmis tahta fotograflari).
